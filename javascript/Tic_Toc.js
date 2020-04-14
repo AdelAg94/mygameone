@@ -184,10 +184,10 @@ function changecolor(){
 }
 }
 function goalertx(){
-    alert("X has Won !!!")
+    alert("مبروك ! ! ! \n فاز اكس ")
 }
 function goalerto(){
-    alert("O has Won !!!")
+    alert("مبروك ! ! ! \n فاز او ")
 }
 function unfil(){
     for(i of rowsl){

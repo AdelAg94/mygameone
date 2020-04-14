@@ -246,6 +246,8 @@ function unfil(){
          OinTCa = []
          counter = 0
          minutes = 0
+         Xwin = [XinFRa, XinSRa, XinTRa, XinFCa, XinSCa, XinTCa]
+         Owin = [OinFRa, OinSRa, OinTRa, OinFCa, OinSCa, OinTCa]
     }
 }
 function checkrow(row){

@@ -207,7 +207,7 @@ function unfil(){
         Os = 0
         eyes = []
         eyesn = 0
-        var XinFR = 0
+        XinFR = 0
         XinFRa = []
         //X in Second Row
          XinSR = 0

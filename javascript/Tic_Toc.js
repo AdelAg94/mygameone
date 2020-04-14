@@ -159,7 +159,12 @@ function winbycrs(X_or_O){
         FRFC.setAttribute("style","background-color: green;")
         SRSC.setAttribute("style","background-color: green;")
         TRTC.setAttribute("style","background-color: green;")
+        if(X_or_O == "X"){
         setTimeout(goalertx, 10)
+        }
+        if(X_or_O == "O"){
+        setTimeout(goalerto, 10)
+        }
         setTimeout(unfil, 1000)
     }
     else  if(FRTC.textContent == X_or_O && SRSC.textContent == X_or_O && TRFC.textContent == X_or_O)
@@ -167,7 +172,12 @@ function winbycrs(X_or_O){
         TRFC.setAttribute("style","background-color: green;")
         SRSC.setAttribute("style","background-color: green;")
         FRTC.setAttribute("style","background-color: green;")
+         if(X_or_O == "X"){
+        setTimeout(goalertx, 10)
+        }
+        if(X_or_O == "O"){
         setTimeout(goalerto, 10)
+        }
         setTimeout(unfil, 1000)
     }
 }

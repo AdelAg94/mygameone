@@ -1,2 +1,2 @@
 # mygameone
-Tic_Toc.html
+index.html

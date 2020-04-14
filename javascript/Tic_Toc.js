@@ -91,7 +91,7 @@ function winbyrow(){
     for(i of FR){
         if(i.textContent === "X" && !(i == XinFRa[0] || i == XinFRa[1] || i == XinFRa[2])){
         XinFR+=1
-        XinFRa.push(i)
+        XinFRa.push(i)  
         }
         else if (i.textContent === "O" && !(i == OinFRa[0] || i == OinFRa[1] || i == OinFRa[2])){
             OinFR+=1
@@ -183,15 +183,6 @@ function winbycrs(X_or_O){
 }
 function changecolor(){
     for(r of Xwin){
-        
-    if(r.length == 3)
-    { console.log(r)
-        for(w of r)
-        {
-            w.setAttribute("style" , "background-color : green;")
-        }
-    }
-        for(r of Owin){
         console.log(r.length)
     if(r.length == 3)
     { console.log(r)
@@ -200,6 +191,16 @@ function changecolor(){
             w.setAttribute("style" , "background-color : green;")
         }
     }
+    for(r of Owin){
+        console.log(r.length)
+    if(r.length == 3)
+    { console.log(r)
+        for(w of r)
+        {
+            w.setAttribute("style" , "background-color : green;")
+        }
+    }
+}
 }
 }
 function goalertx(){

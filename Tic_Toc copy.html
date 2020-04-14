@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Game !</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+        .jumbotron{
+            text-align: center;
+        }
+        button{
+            width: 6em;
+        }
+        body{
+            background-color: blueviolet;
+        }
+        table{
+            background-color: white;
+            width: 100%;
+        }
+        td {
+            font-size: 2em;
+            text-align: center;
+            border: 2px solid black;
+            width: 1em;
+            height: 2em;
+        }
+    </style>
+    <div class="container">
+    <div class="row">
+        <div class="col-xl-3"></div>
+        <div class="col-xl-6 col-12">
+    <div class="jumbotron">
+        <h1 class="display-4">Tic Tac Game :D </h1>
+        <p>Click on Restart to play again</p>
+        <h2>Time</h2>
+        <a class="btn btn-primary btn-lg" role="button">Restart</a>
+      </div>
+    </div>
+      <div class="col-xl-3"></div>
+    </div>
+
+      <div class="container">
+      <div class="row">
+     <div class="col-xl-1"></div>
+      <div class="col-xl-3"></div>
+      <div class="col-xl-3 col-12" >
+    <table>
+        <tr id="FR">
+            <div class="row">
+
+            <div class="col">
+            <td id="FC"></td>
+            </div>
+
+            <div class="col">
+            <td id="SC"></td>
+            </div>
+
+            <div class="col">
+            <td id="TC"></td>
+            </div>
+
+            </div>
+        </tr>
+        <tr id="SR">
+            <div class="row">
+
+            <div class="col">
+            <td id="FC"></td>
+            </div>
+
+            <div class="col">
+            <td id="SC"></td>
+            </div>
+
+            <div class="col">
+            <td id="TC"></td>
+            </div>
+
+            </div>
+        </tr>
+        <tr id="TR">
+            <div class="row">
+
+            <div class="col">
+            <td id="FC"></td>
+            </div>
+
+            <div class="col">
+            <td id="SC"></td>
+            </div>
+
+            <div class="col">
+            <td id="TC"></td>
+            </div>
+
+            </div>
+        </tr>
+    </table>
+    </div>
+    <div class="col-xl-3"></div>
+    <div class="col-xl-2"></div>
+</div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-5"></div>
+        <div class="col-5">
+            <button type="button" class="btn btn-success" id="next">Next</button>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+<script src="Tic_Toc.js"></script>
+</body>
+</html>

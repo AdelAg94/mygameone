@@ -191,6 +191,15 @@ function changecolor(){
             w.setAttribute("style" , "background-color : green;")
         }
     }
+        for(r of Owin){
+        console.log(r.length)
+    if(r.length == 3)
+    { console.log(r)
+        for(w of r)
+        {
+            w.setAttribute("style" , "background-color : green;")
+        }
+    }
 }
 }
 function goalertx(){

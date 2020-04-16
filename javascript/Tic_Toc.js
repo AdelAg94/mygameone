@@ -48,10 +48,13 @@ var Xwin = [XinFRa, XinSRa, XinTRa, XinFCa, XinSCa, XinTCa]
 var Owin = [OinFRa, OinSRa, OinTRa, OinFCa, OinSCa, OinTCa]
 var counter = 0
 var minutes = 0
+// This for restart button
 var rest = document.querySelector("a")
+// These for rows
 var FR = document.querySelectorAll("#FR > td")
 var SR = document.querySelectorAll("#SR > td")
 var TR = document.querySelectorAll("#TR > td")
+// These for columns
 var FC = document.querySelectorAll("#FC")
 var SC = document.querySelectorAll("#SC")
 var TC = document.querySelectorAll("#TC")
@@ -64,6 +67,19 @@ var FRTC = document.querySelector("#FR > #TC")
 var TRFC = document.querySelector("#TR > #FC")
 // This to count time on screen
 var mycount = document.querySelector("h2")
+// This for table border when win
+var mytab = document.querySelector("table")
+
+
+function tablewin(){
+    if(mytab.getAttribute("style") =="border: 3px solid orange;" ){
+        mytab.setAttribute("style", "border: 3px solid black;")
+    }
+    else{
+    mytab.setAttribute("style", "border: 3px solid orange;")
+    }
+    
+}
 function mycou(){
     counter+=1
     
@@ -77,7 +93,8 @@ function mycou(){
     else if(minutes == 0 && counter < 10){
         mycount.textContent = "00 : 0" + counter
         }
-    else{
+    else if(minutes < 10)
+    {
         if(counter > 9){
             mycount.textContent = "0" + minutes + " : "+ counter
             }
@@ -85,6 +102,15 @@ function mycou(){
                 mycount.textContent = "0" + minutes + " : 0" + counter
                 }
     
+    }
+    else if(minutes > 9)
+    {
+        if(counter > 9){
+            mycount.textContent =  minutes + " : "+ counter
+            }
+        else if(counter < 10){
+                mycount.textContent =  minutes + " : 0" + counter
+                }
     }
 }
 function winbyrow(){
@@ -155,30 +181,33 @@ function winbycol(){
 }
 function winbycrs(X_or_O){
     if(FRFC.textContent == X_or_O && SRSC.textContent == X_or_O && TRTC.textContent == X_or_O)
-    {
+    {   tablewin()
         FRFC.setAttribute("style","background-color: green;")
         SRSC.setAttribute("style","background-color: green;")
         TRTC.setAttribute("style","background-color: green;")
         if(X_or_O == "X"){
-        setTimeout(goalertx, 10)
+        
+        setTimeout(goalertx, 1000)
         }
         if(X_or_O == "O"){
-        setTimeout(goalerto, 10)
+        setTimeout(goalerto, 1000)
         }
         setTimeout(unfil, 1000)
+        
     }
     else  if(FRTC.textContent == X_or_O && SRSC.textContent == X_or_O && TRFC.textContent == X_or_O)
-    {
+    {   tablewin()
         TRFC.setAttribute("style","background-color: green;")
         SRSC.setAttribute("style","background-color: green;")
         FRTC.setAttribute("style","background-color: green;")
          if(X_or_O == "X"){
-        setTimeout(goalertx, 10)
+        setTimeout(goalertx, 1000)
         }
         if(X_or_O == "O"){
-        setTimeout(goalerto, 10)
+        setTimeout(goalerto, 1000)
         }
         setTimeout(unfil, 1000)
+        
     }
 }
 function changecolor(){
@@ -258,6 +287,8 @@ function unfil(){
          minutes = 0
          Xwin = [XinFRa, XinSRa, XinTRa, XinFCa, XinSCa, XinTCa]
          Owin = [OinFRa, OinSRa, OinTRa, OinFCa, OinSCa, OinTCa]
+         // To clear table orange border
+         mytab.setAttribute("style", "border: 1px solid black")
     }
 }
 function checkrow(row){
@@ -366,19 +397,21 @@ next.addEventListener("click", function(){
     // This will check if the game won by columns
     winbycol()
     if (XinFR == 3 || XinSR == 3 || XinTR == 3 || XinFC == 3 || XinSC == 3 || XinTC == 3 )
-    {   
+    {   tablewin()
         changecolor()
-        setTimeout(goalertx, 10)
+        setTimeout(goalertx, 1000)
         setTimeout(unfil, 1000)
+        
         
         
     }
     if (OinFR == 3 || OinSR == 3 || OinTR == 3 || OinFC == 3 || OinSC == 3 || OinTC == 3 )
     {
-
+        tablewin()
         changecolor()
-        setTimeout(goalerto, 10)
+        setTimeout(goalerto, 1000)
         setTimeout(unfil, 1000)
+        
     }
     // This to check cross wins by backslash \
     winbycrs("X")

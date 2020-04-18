@@ -69,7 +69,36 @@ var TRFC = document.querySelector("#TR > #FC")
 var mycount = document.querySelector("h2")
 // This for table border when win
 var mytab = document.querySelector("table")
+// To change backgroud color
+var bgcolcount = 0
+var bgcolor = document.querySelector("#bgcolor")
+var mybott = document.querySelector("#mybott")
+var mytop = document.querySelector("#mytop")
+bgcolor.addEventListener("click",function(){
 
+    if(bgcolcount == 2){
+        mybott.setAttribute("style" , "background-color: rgba(51, 173, 45,0.4);")
+        mytop.setAttribute("style" , "background-color: rgba(51, 173, 45,0.4);")
+        bgcolcount+=1;
+    }
+    else if(bgcolcount == 1){
+        mybott.setAttribute("style" , "background-color: rgba(35, 84, 196,0.4);")
+        mytop.setAttribute("style" , "background-color: rgba(35, 84, 196,0.4);")
+        bgcolcount+=1;
+    }
+    else if( bgcolcount == 0){
+    mybott.setAttribute("style" , "background-color: rgba(196, 63, 63,0.4);")
+    mytop.setAttribute("style" , "background-color: rgba(196, 63, 63,0.4);")
+        bgcolcount+=1;
+    }
+    else{
+        mybott.setAttribute("style" , "background-color: rgba(142, 93, 194,0.4);")
+        mytop.setAttribute("style" , "background-color: rgba(142, 93, 194,0.4);")
+        bgcolcount=0;
+    }
+    
+
+})
 
 function tablewin(){
     if(mytab.getAttribute("style") =="border: 3px solid orange;" ){
